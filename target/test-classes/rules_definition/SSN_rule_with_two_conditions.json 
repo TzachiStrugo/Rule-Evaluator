@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Social Security Number",
+    "description": "Rule for detecting valid social security number",
+    "enabled": true,
+    "conditions": [
+      "fact.length() >=9",
+      "fact.matches('^(?!666|000|9\\\\d{2})\\\\d{3}-(?!00)\\\\d{2}-(?!0{4})\\\\d{4}$')"
+    ],
+    "actions": [
+        "System.out.println(\"The SSN number isn't valid\");"
+    ]
+  }
+]
